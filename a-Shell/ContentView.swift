@@ -46,6 +46,15 @@ struct Webview : UIViewRepresentable {
             }
         }
         uiView.loadFileURL(URL(fileURLWithPath: htermFilePath!), allowingReadAccessTo: URL(fileURLWithPath: htermFilePath!))
+        uiView.evaluateJavascript("term_set('cursor-blink', false);") { (result, error) in
+            if error != nil {
+                // NSLog("Error in updateUIView, line = \(command)")
+                // print(error)
+            }
+            if (result != nil) {
+                // sprint(result)
+            }
+        }
     }
 }
 
